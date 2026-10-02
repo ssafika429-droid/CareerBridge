@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CareerBridge Action & Automation (Level 3)",
+  "description": "Salah satu keluaran JSON pada level-3-action-automation.json: rencana aksi dari Structured Output (action_plan), atau keluaran cabang learning_reminder, learning_action, dan resource_recommendations. Keluaran cabang cv_generation divalidasi oleh cv-generator.schema.json. Dua Chat Output kalender (Approved Calendar Event dan Calendar Event Rejected) berisi teks persetujuan biasa, bukan JSON, sehingga tidak tercakup skema ini.",
+  "oneOf": [
+    { "$ref": "#/$defs/action_plan" },
+    { "$ref": "#/$defs/learning_reminder" },
+    { "$ref": "#/$defs/learning_action" },
+    { "$ref": "#/$defs/resource_recommendations" }
+  ],
+  "$defs": {
+    "action_plan": {
+      "description": "Keluaran Structured Output 'Action Plan' (delapan field pada output_schema node). Diteruskan ke router; tidak ditampilkan oleh Chat Output mana pun.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_type",
+        "skill",
+        "task",
+        "learning_goal",
+        "current_level",
+        "duration_minutes",
+        "schedule",
+        "rationale"
+      ],
+      "properties": {
+        "action_type": {
+          "type": "string",
+          "enum": ["learning_action", "reminder", "calendar_event", "cv_generation", "resource_search"]
+        },
+        "skill": { "type": "string", "minLength": 1 },
+        "task": { "type": "string", "minLength": 1 },
+        "learning_goal": { "type": "string", "minLength": 1 },
+        "current_level": { "type": "string", "minLength": 1 },
+        "duration_minutes": {
+          "description": "Prompt: bilangan bulat menit; 0 bila tidak disebut pengguna.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "schedule": {
+          "description": "Prompt: ISO 8601 hanya bila pengguna menyebut waktu; selain itu 'insufficient evidence'.",
+          "anyOf": [
+            { "const": "insufficient evidence" },
+            {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}(:\\d{2}(\\.\\d+)?)?(Z|[+-]\\d{2}:?\\d{2})?)?$"
+            }
+          ]
+        },
+        "rationale": { "type": "string", "minLength": 1 }
+      }
+    },
+    "learning_reminder": {
+      "description": "Keluaran cabang reminder ('Learning Reminder JSON'), dibentuk oleh node Parser dari rencana aksi tanpa panggilan model. Perhatikan nilai action_type berbeda dari rencana aksi ('learning_reminder', bukan 'reminder').",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action_type", "skill", "task", "duration_minutes"],
+      "properties": {
+        "action_type": { "const": "learning_reminder" },
+        "skill": { "type": "string", "minLength": 1 },
+        "task": { "type": "string", "minLength": 1 },
+        "duration_minutes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "learning_action": {
+      "description": "Keluaran cabang learning_action ('Learning Action JSON').",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_type",
+        "skill",
+        "task",
+        "duration_minutes",
+        "deliverable",
+        "evidence",
+        "validation_note"
+      ],
+      "properties": {
+        "action_type": { "const": "learning_action" },
+        "skill": { "type": "string", "minLength": 1 },
+        "task": { "type": "string", "minLength": 1 },
+        "duration_minutes": { "type": "integer", "minimum": 0 },
+        "deliverable": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "string", "minLength": 1 },
+        "validation_note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "resource_recommendations": {
+      "description": "Keluaran cabang resource_search ('Resource Recommendations JSON'). 'resources' boleh kosong bila hasil pencarian kosong atau tidak relevan (prompt). 'url' harus salinan dari hasil pencarian; kesesuaian ini tidak dapat diperiksa oleh skema.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skill", "learning_goal", "resources", "validation_note"],
+      "properties": {
+        "skill": { "type": "string", "minLength": 1 },
+        "learning_goal": { "type": "string", "minLength": 1 },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "type", "reason", "url"],
+            "properties": {
+              "title": { "type": "string", "minLength": 1 },
+              "type": { "type": "string", "minLength": 1 },
+              "reason": { "type": "string", "minLength": 1 },
+              "url": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "validation_note": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

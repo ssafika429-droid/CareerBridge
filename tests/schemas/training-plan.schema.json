@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CareerBridge 4-Week Training Plan (Level 1, Output 2)",
+  "description": "Keluaran node '4-Week Training Plan JSON' pada level-1-careerbridge-main.json. Tepat empat objek pada training_plan.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "target_role", "priority_gaps", "training_plan", "validation_note"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["ok", "insufficient evidence"]
+    },
+    "target_role": { "type": "string" },
+    "priority_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["skill", "priority"],
+        "properties": {
+          "skill": { "type": "string", "minLength": 1 },
+          "priority": { "type": "string", "enum": ["High", "Medium", "Low"] }
+        }
+      }
+    },
+    "training_plan": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "week",
+          "focus",
+          "goal",
+          "actions",
+          "practice",
+          "deliverable",
+          "portfolio_evidence",
+          "estimated_time"
+        ],
+        "properties": {
+          "week": { "type": "integer", "minimum": 1, "maximum": 4 },
+          "focus": { "type": "string", "minLength": 1 },
+          "goal": { "type": "string", "minLength": 1 },
+          "actions": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "practice": { "type": "string", "minLength": 1 },
+          "deliverable": { "type": "string", "minLength": 1 },
+          "portfolio_evidence": { "type": "string", "minLength": 1 },
+          "estimated_time": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "validation_note": { "type": "string" }
+  }
+}

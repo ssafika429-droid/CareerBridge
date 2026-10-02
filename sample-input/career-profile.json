@@ -1,0 +1,21 @@
+{
+  "profile": "Mahasiswa semester 6 program studi Informatika yang tertarik pada pengembangan antarmuka web. Terbiasa mengerjakan tugas kelompok dan membuat proyek web kecil untuk tugas kuliah.",
+  "education": "S1 Informatika, semester 6. Mata kuliah yang telah ditempuh: Pemrograman Web, Basis Data, Struktur Data, Rekayasa Perangkat Lunak.",
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git",
+    "Python dasar",
+    "SQL dasar"
+  ],
+  "projects": [
+    "Website katalog buku kampus: dibuat dengan HTML, CSS, dan JavaScript, halaman daftar buku dan pencarian sederhana; dikerjakan berdua, repositori dikelola dengan Git.",
+    "Aplikasi pencatat tugas berbasis React: menampilkan daftar tugas, menambah dan menghapus tugas; belum memiliki pengujian otomatis; proyek mata kuliah Pemrograman Web."
+  ],
+  "certifications": [
+    "Kursus Dasar Python (penyelenggara contoh, fiktif)"
+  ],
+  "target_role": "Junior Frontend Developer",
+  "job_description": "Membangun antarmuka web yang responsif menggunakan React dan TypeScript. Mengintegrasikan antarmuka dengan REST API. Menulis unit test untuk komponen. Bekerja dengan Git dalam tim dan melakukan code review."
+}

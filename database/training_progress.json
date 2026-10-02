@@ -1,0 +1,18 @@
+[
+  {
+    "user_id": "user_001",
+    "training_name": "React Fundamentals",
+    "skill_target": "React",
+    "status": "In Progress",
+    "progress_percentage": 50,
+    "started_at": "2026-09-20"
+  },
+  {
+    "user_id": "user_001",
+    "training_name": "JavaScript Fundamentals",
+    "skill_target": "JavaScript",
+    "status": "Completed",
+    "progress_percentage": 100,
+    "started_at": "2026-09-01"
+  }
+]

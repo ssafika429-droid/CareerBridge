@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CareerBridge Career Analysis (Level 1, Output 1)",
+  "description": "Keluaran node 'Career Analysis JSON' pada level-1-careerbridge-main.json. Nilai teks boleh berisi 'insufficient evidence' bila bukti tidak cukup.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "input_flags",
+    "target_role",
+    "career_summary",
+    "detected_skills",
+    "matched_skills",
+    "skill_gaps",
+    "recommendations",
+    "validation_questions",
+    "uncertainty_note",
+    "responsible_ai_note"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["ok", "insufficient evidence"]
+    },
+    "input_flags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "target_role": { "type": "string" },
+    "career_summary": { "type": "string" },
+    "detected_skills": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "matched_skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["skill", "evidence", "source_section"],
+        "properties": {
+          "skill": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "string", "minLength": 1 },
+          "source_section": {
+            "type": "string",
+            "enum": ["profile", "education", "skills", "projects", "certifications"]
+          }
+        }
+      }
+    },
+    "skill_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["skill", "reason", "evidence", "priority"],
+        "properties": {
+          "skill": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "string", "minLength": 1 },
+          "priority": { "type": "string", "enum": ["High", "Medium", "Low"] }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "validation_questions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "uncertainty_note": { "type": "string" },
+    "responsible_ai_note": { "type": "string" }
+  }
+}

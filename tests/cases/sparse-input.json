@@ -1,0 +1,30 @@
+{
+  "id": "sparse-input",
+  "description": "Hampir seluruh bagian input kosong. Flow harus menandai bagian yang kosong dan tidak boleh mengarang skill, proyek, atau skill gap.",
+  "input": {
+    "profile": "",
+    "education": "",
+    "skills": [],
+    "projects": [],
+    "certifications": [],
+    "target_role": "Data Analyst",
+    "job_description": ""
+  },
+  "expect": {
+    "analysis": {
+      "schema": "career-analysis.schema.json",
+      "status": "insufficient evidence",
+      "input_flags_min_items": 1,
+      "detected_skills": "empty",
+      "matched_skills": "empty"
+    },
+    "plan": {
+      "schema": "training-plan.schema.json",
+      "status": "insufficient evidence"
+    },
+    "manual_review": [
+      "skill_gaps kosong atau setiap nilainya 'insufficient evidence'",
+      "tidak ada nama skill, proyek, atau sertifikasi yang tidak ada di input"
+    ]
+  }
+}

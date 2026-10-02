@@ -1,0 +1,120 @@
+{
+  "career_context": {
+    "profile": "Mahasiswa semester 6 program studi Informatika yang tertarik pada pengembangan antarmuka web. Terbiasa mengerjakan tugas kelompok dan membuat proyek web kecil untuk tugas kuliah.",
+    "education": "S1 Informatika, semester 6. Mata kuliah yang telah ditempuh: Pemrograman Web, Basis Data, Struktur Data, Rekayasa Perangkat Lunak.",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Python dasar",
+      "SQL dasar"
+    ],
+    "experience_projects": [
+      "Website katalog buku kampus: dibuat dengan HTML, CSS, dan JavaScript, halaman daftar buku dan pencarian sederhana; dikerjakan berdua, repositori dikelola dengan Git.",
+      "Aplikasi pencatat tugas berbasis React: menampilkan daftar tugas, menambah dan menghapus tugas; belum memiliki pengujian otomatis; proyek mata kuliah Pemrograman Web."
+    ],
+    "certifications": [
+      "Kursus Dasar Python (penyelenggara contoh, fiktif)"
+    ],
+    "career_analysis": {
+      "target_role": "Junior Frontend Developer",
+      "skill_gaps": [
+        {
+          "skill": "TypeScript",
+          "priority": "High"
+        },
+        {
+          "skill": "Unit testing",
+          "priority": "High"
+        },
+        {
+          "skill": "Integrasi REST API",
+          "priority": "Medium"
+        },
+        {
+          "skill": "Code review",
+          "priority": "Low"
+        }
+      ]
+    },
+    "skill_progress": [
+      {
+        "skill": "React",
+        "status": "evidenced",
+        "evidence": "Aplikasi pencatat tugas berbasis React"
+      },
+      {
+        "skill": "JavaScript",
+        "status": "evidenced",
+        "evidence": "dibuat dengan HTML, CSS, dan JavaScript"
+      },
+      {
+        "skill": "HTML",
+        "status": "evidenced",
+        "evidence": "dibuat dengan HTML, CSS, dan JavaScript"
+      },
+      {
+        "skill": "CSS",
+        "status": "evidenced",
+        "evidence": "dibuat dengan HTML, CSS, dan JavaScript"
+      },
+      {
+        "skill": "Git",
+        "status": "evidenced",
+        "evidence": "repositori dikelola dengan Git"
+      },
+      {
+        "skill": "TypeScript",
+        "status": "gap",
+        "evidence": "Belum ada bukti pada analisis analysis-2026-09-15-001."
+      },
+      {
+        "skill": "Unit testing",
+        "status": "gap",
+        "evidence": "Belum ada bukti pada analisis analysis-2026-09-15-001."
+      },
+      {
+        "skill": "Integrasi REST API",
+        "status": "gap",
+        "evidence": "Belum ada bukti pada analisis analysis-2026-09-15-001."
+      }
+    ],
+    "training_progress": [
+      {
+        "skill": "TypeScript",
+        "progress_status": "in_progress",
+        "completed_actions": [
+          "Mempelajari tipe dasar, interface, dan tipe fungsi."
+        ]
+      },
+      {
+        "skill": "Unit testing",
+        "progress_status": "not_started",
+        "completed_actions": []
+      }
+    ]
+  },
+  "requests": [
+    {
+      "id": "calendar_event",
+      "message": "Jadwalkan sesi latihan TypeScript selama 45 menit besok jam 19.00."
+    },
+    {
+      "id": "reminder",
+      "message": "Ingatkan saya untuk latihan TypeScript selama 45 menit."
+    },
+    {
+      "id": "learning_action",
+      "message": "Apa yang sebaiknya saya kerjakan berikutnya?"
+    },
+    {
+      "id": "resource_search",
+      "message": "Carikan bahan belajar untuk skill gap TypeScript saya."
+    },
+    {
+      "id": "cv_generation",
+      "message": "Buatkan konten CV saya untuk peran Junior Frontend Developer."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# Rahasia dan konfigurasi lokal
+.env
+.env.*
+!.env.example
+mcp-config.json
+mcp.json
+secrets/
+*.local.json
+
+# Database lokal Langflow (jika dijalankan dari folder ini)
+langflow.db
+*.sqlite3
+
+# Python (runner tes opsional di masa depan)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Dependencies
+**/node_modules/
+
+# Editor dan sistem operasi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Catatan: export flow dari Langflow dapat memuat API key jika opsi
+# "Save with my API keys" dicentang. Periksa file export sebelum commit.

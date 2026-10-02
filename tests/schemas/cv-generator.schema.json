@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CareerBridge CV / Portfolio Content (Level 3, cabang cv_generation)",
+  "description": "Keluaran node 'CV / Portfolio Content JSON' pada level-3-action-automation.json. Level 1 tidak memiliki CV Generator; satu-satunya CV Generator pada flow berada di cabang cv_generation Level 3. Tipe elemen array tidak didefinisikan oleh prompt (hanya '[]'), sehingga dipilih string berdasarkan contoh 'insufficient evidence' pada prompt.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "professional_summary",
+    "skills_section",
+    "project_descriptions",
+    "achievement_highlights",
+    "portfolio_suggestions",
+    "missing_evidence",
+    "validation_note"
+  ],
+  "properties": {
+    "professional_summary": { "type": "string", "minLength": 1 },
+    "skills_section": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "project_descriptions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "achievement_highlights": {
+      "description": "Prompt: bila tidak ada bukti achievement, isi ['insufficient evidence'].",
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "portfolio_suggestions": {
+      "description": "Satu-satunya tempat saran (bukan fakta) menurut prompt.",
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "validation_note": { "type": "string", "minLength": 1 }
+  }
+}

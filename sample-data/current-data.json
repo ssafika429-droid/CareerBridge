@@ -1,0 +1,24 @@
+{
+  "user_id": "demo-user-001",
+  "target_role": "Junior Frontend Developer",
+  "profile": "Mahasiswa semester 6 program studi Informatika yang tertarik pada pengembangan antarmuka web. Terbiasa mengerjakan tugas kelompok dan membuat proyek web kecil untuk tugas kuliah.",
+  "education": "S1 Informatika, semester 6. Mata kuliah yang telah ditempuh: Pemrograman Web, Basis Data, Struktur Data, Rekayasa Perangkat Lunak.",
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git",
+    "Python dasar",
+    "SQL dasar",
+    "TypeScript dasar"
+  ],
+  "projects": [
+    "Website katalog buku kampus: dibuat dengan HTML, CSS, dan JavaScript, halaman daftar buku dan pencarian sederhana; dikerjakan berdua, repositori dikelola dengan Git.",
+    "Aplikasi pencatat tugas berbasis React: menampilkan daftar tugas, menambah dan menghapus tugas; belum memiliki pengujian otomatis; proyek mata kuliah Pemrograman Web.",
+    "Fitur filter kategori pada website katalog buku kampus: ditambahkan dengan JavaScript; perubahan dikerjakan pada branch terpisah dan digabung melalui pull request di Git.",
+    "Modul pencarian website katalog buku kampus dikonversi ke TypeScript dengan tipe dasar dan interface; belum memiliki unit test."
+  ],
+  "certifications": [
+    "Kursus Dasar Python (penyelenggara contoh, fiktif)"
+  ]
+}
